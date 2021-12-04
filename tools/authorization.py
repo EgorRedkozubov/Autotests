@@ -1,20 +1,8 @@
-import os
-import pytest
+import time
 
 
-pytest_plugins = [
-    "fixtures.driver",
-    "fixtures.users"
-]
 
-
-@pytest.fixture(scope='module')
-def add_chromium_to_path():
-    os.environ['PATH'] += r"C:\Users\egor.redkozubov\Desktop\tests_ui\seldriver"
-
-
-@pytest.fixture(scope='module')
-def authorization(add_chromium_to_path, driver, user_with_my_personal_number_xd):
+def authorization(driver, user_with_my_personal_number_xd):
     driver.get("https://lk.test.izanyat.ru/")
     form_label = None
     while form_label== None:
