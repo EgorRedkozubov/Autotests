@@ -1,3 +1,6 @@
+
 pytest_plugins = [
-    "fixtures.driver"
+    "fixtures.driver",
+    "fixtures.users"
 ]
+
