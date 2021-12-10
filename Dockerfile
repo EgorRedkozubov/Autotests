@@ -1,7 +1,7 @@
 FROM python:3.10.0
 
 RUN apt-get update && apt-get install -y \
-    unixodbc-dev
+    unixodbc-dev && pip install --upgrade pip
 
 WORKDIR /usr/src/app
 
@@ -14,4 +14,3 @@ WORKDIR /usr/src/app/tests
 
 ENV PYTHONPATH /usr/src/app
 
-#to be continued
